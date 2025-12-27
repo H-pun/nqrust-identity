@@ -27,6 +27,20 @@ import { Environment } from "./environment";
 import { toPage } from "./page/routes";
 import { routes } from "./routes";
 import useIsFeatureEnabled, { Feature } from "./utils/useIsFeatureEnabled";
+import {
+    BellIcon,
+    BullseyeIcon,
+    ClockIcon,
+    CogIcon,
+    CubesIcon,
+    DatabaseIcon,
+    GlobeIcon,
+    KeyIcon,
+    LockIcon,
+    ObjectGroupIcon,
+    ShieldAltIcon,
+    UsersIcon
+} from "../shared/@patternfly/react-icons";
 
 import "./page-nav.css";
 
@@ -55,18 +69,42 @@ const LeftNav = ({ title, path, id }: LeftNavProps) => {
         return undefined;
     }
 
+    const labelText = t(title);
+    const iconByPath: Record<string, JSX.Element> = {
+        "/realms": <ShieldAltIcon />, // manage realms
+        "/clients": <CubesIcon />,
+        "/client-scopes": <BullseyeIcon />,
+        "/roles": <ShieldAltIcon />,
+        "/users": <UsersIcon />,
+        "/groups": <ObjectGroupIcon />,
+        "/sessions": <ClockIcon />,
+        "/events": <BellIcon />,
+        "/realm-settings": <CogIcon />,
+        "/authentication": <KeyIcon />,
+        "/permissions": <LockIcon />,
+        "/identity-providers": <GlobeIcon />,
+        "/user-federation": <DatabaseIcon />,
+        "/organizations": <ObjectGroupIcon />
+    };
+
+    const iconNode = iconByPath[id || path] || <CubesIcon />;
     const name = "nav-item" + path.replace("/", "-");
     return (
         <li>
             <NavLink
                 id={name}
                 data-testid={name}
+                aria-label={labelText}
+                title={labelText}
                 to={`/${encodedRealm}${path}`}
                 className={({ isActive }) =>
                     `pf-v5-c-nav__link${isActive ? " pf-m-current" : ""}`
                 }
             >
-                {t(title)}
+                <span className="kc-nav-icon" aria-hidden="true">
+                    {iconNode}
+                </span>
+                <span className="kc-nav-label">{labelText}</span>
             </NavLink>
         </li>
     );
