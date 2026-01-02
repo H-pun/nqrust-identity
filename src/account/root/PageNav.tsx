@@ -20,6 +20,17 @@ import {
     Spinner
 } from "../../shared/@patternfly/react-core";
 import {
+    ApplicationsIcon,
+    BullseyeIcon,
+    KeyIcon,
+    LockIcon,
+    ObjectGroupIcon,
+    ResourcesAlmostFullIcon,
+    ShieldAltIcon,
+    UsersIcon,
+    UserIcon
+} from "../../shared/@patternfly/react-icons";
+import {
     PropsWithChildren,
     MouseEvent as ReactMouseEvent,
     Suspense,
@@ -33,6 +44,8 @@ import fetchContentJson from "../content/fetchContent";
 import { environment, type Environment, type Feature } from "../environment";
 import { TFuncKey } from "../i18n";
 import { usePromise } from "../utils/usePromise";
+
+import "./page-nav.css";
 
 type RootMenuItem = {
     id?: string;
@@ -56,7 +69,7 @@ export const PageNav = () => {
 
     usePromise(signal => fetchContentJson({ signal, context }), setMenuItems);
     return (
-        <PageSidebar>
+        <PageSidebar className="kc-account-page-nav">
             <PageSidebarBody>
                 <Nav>
                     <NavList>
@@ -97,9 +110,15 @@ function NavMenuItem({ menuItem }: NavMenuItemProps) {
     );
 
     if ("path" in menuItem) {
+        const label = t(menuItem.label);
         return (
-            <NavLink path={menuItem.path} isActive={isActive}>
-                {t(menuItem.label)}
+            <NavLink
+                path={menuItem.path}
+                label={label}
+                icon={getIcon(menuItem)}
+                isActive={isActive}
+            >
+                {label}
             </NavLink>
         );
     }
@@ -107,7 +126,14 @@ function NavMenuItem({ menuItem }: NavMenuItemProps) {
     return (
         <NavExpandable
             data-testid={menuItem.label}
-            title={t(menuItem.label)}
+            title={
+                <span className="kc-nav-link-content">
+                    <span className="kc-nav-icon" aria-hidden="true">
+                        {getIcon(menuItem)}
+                    </span>
+                    <span className="kc-nav-label">{t(menuItem.label)}</span>
+                </span>
+            }
             isActive={isActive}
             isExpanded={isActive}
         >
@@ -137,11 +163,15 @@ function matchMenuItem(currentPath: string, menuItem: MenuItem): boolean {
 type NavLinkProps = {
     path: string;
     isActive: boolean;
+    label: string;
+    icon: JSX.Element;
 };
 
 export const NavLink = ({
     path,
     isActive,
+    label,
+    icon,
     children
 }: PropsWithChildren<NavLinkProps>) => {
     const menuItemPath = getFullUrl(path) + location.search;
@@ -153,12 +183,48 @@ export const NavLink = ({
             data-testid={path}
             to={href}
             isActive={isActive}
+            aria-label={label}
             onClick={event =>
                 // PatternFly does not have the correct type for this event, so we need to cast it.
                 handleClick(event as unknown as ReactMouseEvent<HTMLAnchorElement>)
             }
         >
-            {children}
+            <span className="kc-nav-link-content">
+                <span className="kc-nav-icon" aria-hidden="true">
+                    {icon}
+                </span>
+                <span className="kc-nav-label">{children}</span>
+            </span>
         </NavItem>
     );
 };
+
+const iconByPath: Record<string, JSX.Element> = {
+    "": <UserIcon />,
+    "account-security/signing-in": <ShieldAltIcon />,
+    "account-security/device-activity": <LockIcon />,
+    "account-security/linked-accounts": <KeyIcon />,
+    applications: <ApplicationsIcon />,
+    groups: <UsersIcon />,
+    organizations: <ObjectGroupIcon />,
+    resources: <ResourcesAlmostFullIcon />,
+    oid4vci: <BullseyeIcon />
+};
+
+const iconByLabel: Partial<Record<TFuncKey, JSX.Element>> = {
+    accountSecurity: <ShieldAltIcon />, // dropdown parent
+    applications: <ApplicationsIcon />,
+    groups: <UsersIcon />,
+    organizations: <ObjectGroupIcon />,
+    resources: <ResourcesAlmostFullIcon />,
+    personalInfo: <UserIcon />
+};
+
+function getIcon(menuItem: MenuItem) {
+    if ("path" in menuItem) {
+        return iconByPath[menuItem.path] ?? iconByLabel[menuItem.label] ?? (
+            <ApplicationsIcon />
+        );
+    }
+    return iconByLabel[menuItem.label] ?? <ApplicationsIcon />;
+}
