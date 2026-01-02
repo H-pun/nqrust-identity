@@ -5,6 +5,7 @@
 # admin/page-nav.css
 # admin/PageHeader.tsx
 # admin/PageNav.tsx
+# account/root/PageNav.tsx
 # shared/keycloak-ui-shared/masthead/Masthead.tsx
 # === Owned files end =====
 
@@ -776,7 +777,6 @@
 /account/resources/ShareTheResource.tsx
 /account/root/header.module.css
 /account/root/Header.tsx
-/account/root/PageNav.tsx
 /account/root/Root.tsx
 /account/utils/formatDate.ts
 /account/utils/joinPath.ts
