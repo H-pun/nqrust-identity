@@ -1355,6 +1355,13 @@
     url-join "^5.0.0"
     url-template "^3.1.1"
 
+"@keycloakify/keycloak-account-ui@~260305.0.1":
+  version "260305.0.1"
+  resolved "https://registry.yarnpkg.com/@keycloakify/keycloak-account-ui/-/keycloak-account-ui-260305.0.1.tgz#16c4fdf7997e627ea818e7b8a51fa83c46b0d244"
+  integrity sha512-it5VpXaYOrhJEWicDB/5KPMUKdMZZxit8tGkfBfxKcysGapqcNtDkJwsOSUUBn/GCG3WeONU3VuYL5jSiY6IFw==
+  dependencies:
+    tsafe "^1.8.5"
+
 "@keycloakify/keycloak-admin-ui@~260305.0.0":
   version "260305.0.0"
   resolved "https://registry.yarnpkg.com/@keycloakify/keycloak-admin-ui/-/keycloak-admin-ui-260305.0.0.tgz#d4b926fdc58748e879f87d0dcae3bf989cfcbf7e"
