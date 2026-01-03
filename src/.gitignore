@@ -5,7 +5,14 @@
 # admin/page-nav.css
 # admin/PageHeader.tsx
 # admin/PageNav.tsx
+# account/assets/favicon.svg
+# account/assets/logo.svg
 # account/root/PageNav.tsx
+# account/root/Root.tsx
+# admin/assets/favicon.svg
+# admin/assets/icon.svg
+# admin/assets/logo.svg
+# admin/page/PageList.tsx
 # shared/keycloak-ui-shared/masthead/Masthead.tsx
 # === Owned files end =====
 
@@ -26,10 +33,7 @@
 /admin/Root.tsx
 /admin/routes.tsx
 /admin/util.ts
-/admin/assets/favicon.svg
-/admin/assets/icon.svg
 /admin/assets/img_avatar.svg
-/admin/assets/logo.svg
 /admin/authentication/AuthenticationSection.tsx
 /admin/authentication/BindFlowDialog.tsx
 /admin/authentication/build-in-label.module.css
@@ -118,7 +122,6 @@
 /admin/page/constants.ts
 /admin/page/Page.tsx
 /admin/page/PageHandler.tsx
-/admin/page/PageList.tsx
 /admin/page/routes.tsx
 /admin/permissions-configuration/PermissionsConfigurationSection.tsx
 /admin/permissions-configuration/routes.ts
@@ -724,8 +727,6 @@
 /account/api/request.ts
 /account/applications/Applications.tsx
 /account/assets/content.ts
-/account/assets/favicon.svg
-/account/assets/logo.svg
 /account/content/ContentComponent.tsx
 /account/content/fetchContent.ts
 /account/groups/Groups.tsx
@@ -777,7 +778,6 @@
 /account/resources/ShareTheResource.tsx
 /account/root/header.module.css
 /account/root/Header.tsx
-/account/root/Root.tsx
 /account/utils/formatDate.ts
 /account/utils/joinPath.ts
 /account/utils/useAccountAlerts.ts

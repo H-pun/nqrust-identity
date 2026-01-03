@@ -1,82 +1,19 @@
 /** Custom styling for account sidebar (mirrors admin collapsed behavior) */
 
-.kc-account-page-nav {
-    --pf-v5-c-page__sidebar--Transition: all 50ms cubic-bezier(0.42, 0, 0.58, 1);
-    overflow-y: auto;
+/* Admin UI sidebar styles */
+.pf-v5-c-page__sidebar.pf-m-collapsed {
+    max-width: 5rem;
 }
 
-.kc-account-page-nav .kc-nav-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.4rem;
-    height: 1.4rem;
-    margin-right: 0.5rem;
-}
-
-.kc-account-page-nav .kc-nav-icon svg {
-    width: 1.1rem;
-    height: 1.1rem;
-}
-
-.kc-account-page-nav .kc-nav-link-content {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-}
-
-.kc-account-page-nav.pf-m-collapsed {
-    --pf-v5-c-page__sidebar--TranslateX: 0;
-    --pf-v5-c-page__sidebar--Width: 4rem;
-    max-width: 4rem;
-    min-width: 4rem;
-    width: 4rem;
-    overflow: visible;
-    border-inline-end: 1px solid var(--pf-v5-global--BorderColor--100);
-    background-color: var(--pf-v5-global--BackgroundColor--light-100);
-}
-
-.kc-account-page-nav.pf-m-collapsed .pf-v5-c-nav__list > li {
-    padding: 0.1rem 0;
-    display: flex;
-    justify-content: center;
-}
-
-.kc-account-page-nav.pf-m-collapsed .pf-v5-c-nav {
-    --pf-v5-c-nav__link--PaddingTop: var(--pf-v5-global--spacer--sm);
-    --pf-v5-c-nav__link--PaddingBottom: var(--pf-v5-global--spacer--sm);
-}
-
-.kc-account-page-nav.pf-m-collapsed .pf-v5-c-nav__section-title,
-.kc-account-page-nav.pf-m-collapsed .pf-v5-c-nav__group-title,
-.kc-account-page-nav.pf-m-collapsed .kc-nav-label {
+/* HIDE SECTION TITLES */
+.pf-v5-c-page__sidebar.pf-m-collapsed .pf-v5-c-nav__section-title,
+.pf-v5-c-page__sidebar.pf-m-collapsed .pf-v5-c-nav__group-title,
+.pf-v5-c-page__sidebar.pf-m-collapsed .kc-nav-label {
     display: none;
 }
 
-.kc-account-page-nav.pf-m-collapsed .pf-v5-c-nav__link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    padding-inline: 0.3rem;
-    width: 100%;
-    min-height: 2.25rem;
-}
-
-.kc-account-page-nav.pf-m-collapsed .kc-nav-icon {
-    width: 1.4rem;
-    height: 1.4rem;
-    margin: 0 auto;
-    color: var(--pf-v5-global--primary-color--100);
-}
-
-.kc-account-page-nav.pf-m-collapsed .kc-nav-icon svg {
-    width: 1.1rem;
-    height: 1.1rem;
-}
-
-.kc-account-page-nav.pf-m-collapsed .pf-v5-c-nav__link.pf-m-current {
-    background-color: color-mix(in srgb, var(--pf-v5-global--primary-color--100) 18%, transparent);
-    box-shadow: inset 3px 0 var(--pf-v5-global--primary-color--200);
-    border-radius: 0;
+/* ICONS */
+.pf-v5-c-page__sidebar.pf-m-collapsed .kc-nav-icon svg {
+    width: 1rem;
+    height: 1rem;
 }
