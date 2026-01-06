@@ -1,7 +1,9 @@
 # This file is managed by Keycloakify, do not edit it manually.
 
 # === Owned files start ===
+# account/KcPage.tsx
 # admin/index.css
+# admin/KcPage.tsx
 # admin/page-nav.css
 # admin/PageHeader.tsx
 # admin/PageNav.tsx
@@ -13,6 +15,7 @@
 # admin/assets/icon.svg
 # admin/assets/logo.svg
 # admin/page/PageList.tsx
+# admin/realm-settings/RealmSettingsTabs.tsx
 # admin/context/realm-context/useHash.tsx
 # shared/keycloak-ui-shared/masthead/Masthead.tsx
 # === Owned files end =====
@@ -28,7 +31,6 @@
 /admin/i18next.d.ts
 /admin/KcAdminUi.tsx
 /admin/KcContext.ts
-/admin/KcPage.tsx
 /admin/PageHeaderClearCachesModal.tsx
 /admin/PageNotFoundSection.tsx
 /admin/Root.tsx
@@ -152,7 +154,6 @@
 /admin/realm-settings/ProfilesTab.tsx
 /admin/realm-settings/realm-settings-section.css
 /admin/realm-settings/RealmSettingsSection.tsx
-/admin/realm-settings/RealmSettingsTabs.tsx
 /admin/realm-settings/routes.ts
 /admin/realm-settings/SessionsTab.tsx
 /admin/realm-settings/TokensTab.tsx
@@ -712,7 +713,6 @@
 /account/i18next.d.ts
 /account/KcAccountUi.tsx
 /account/KcContext.ts
-/account/KcPage.tsx
 /account/routes.tsx
 /account/account-security/AccountRow.tsx
 /account/account-security/DeviceActivity.tsx
