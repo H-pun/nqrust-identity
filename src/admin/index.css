@@ -18,6 +18,7 @@ input[type="checkbox"] {
     height: 20px;
     width: 20px;
     vertical-align: baseline;
+    accent-color: var(--primary);
 }
 
 .keycloak__form_actions {
@@ -138,6 +139,10 @@ div.w-tc-editor {
 .pf-v5-svg {
     fill: var(--primary);
 }
+a[target="_blank"] .pf-v5-svg,
+a[target="_blank"].pf-v5-svg {
+    fill: var(--pf-v5-global--link--Color);
+}
 
 /* SIDEBAR */
 .pf-v5-c-page__sidebar {
@@ -186,6 +191,9 @@ div.w-tc-editor {
 .pf-v5-c-menu-toggle {
     border-radius: var(--radius);
 }
+.pf-v5-c-button.pf-m-link {
+    color: var(--primary);
+}
 
 /* BADGE */
 .pf-v5-c-label {
@@ -201,11 +209,34 @@ div.w-tc-editor {
 }
 
 /* TABS */
-.pf-v5-c-tabs__item.pf-m-current {
-    --pf-v5-c-tabs__link--after--BorderColor: var(--primary);
+.pf-v5-c-tabs__link::before {
+    border: none;
+}
+.pf-v5-c-tabs__link::after {
+    border: none;
+}
+.pf-v5-c-tabs__link {
+    border-radius: var(--radius) var(--radius) 0 0;
+    color: var(--foreground);
+}
+.pf-v5-c-tabs__item.pf-m-current .pf-v5-c-tabs__link {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border-radius: var(--radius) var(--radius) 0 0;
 }
 
 /* LINKS */
 .pf-v5-c-table__td a {
     color: var(--primary);
+}
+.pf-v5-c-table__td a[target="_blank"] {
+    color: var(--pf-v5-global--link--Color);
+}
+
+/* TOGGLE */
+.pf-v5-c-switch__toggle:hover {
+    background-color: var(--accent-foreground);
+}
+.pf-v5-c-switch__input:checked ~ .pf-v5-c-switch__toggle {
+    background-color: var(--primary);
 }
