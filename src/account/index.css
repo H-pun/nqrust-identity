@@ -210,6 +210,9 @@ a[target="_blank"].pf-v5-svg {
 .pf-v5-c-button.pf-m-link {
     color: var(--primary);
 }
+.pf-v5-c-menu-toggle.pf-m-primary {
+    --pf-v5-c-menu-toggle--BackgroundColor: transparent;
+}
 
 /* BADGE */
 .pf-v5-c-label {
