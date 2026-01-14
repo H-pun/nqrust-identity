@@ -16,6 +16,7 @@
 # admin/assets/logo.svg
 # admin/page/PageList.tsx
 # admin/realm-settings/RealmSettingsTabs.tsx
+# admin/components/key-value-form/KeyValueInput.tsx
 # admin/context/realm-context/useHash.tsx
 # shared/keycloak-ui-shared/masthead/Masthead.tsx
 # === Owned files end =====
@@ -402,7 +403,6 @@
 /admin/components/key-value-form/AttributeForm.css
 /admin/components/key-value-form/AttributeForm.tsx
 /admin/components/key-value-form/key-value-convert.ts
-/admin/components/key-value-form/KeyValueInput.tsx
 /admin/components/keycloak-card/ClickableCard.tsx
 /admin/components/keycloak-card/keycloak-card.css
 /admin/components/keycloak-card/KeycloakCard.tsx
