@@ -11,6 +11,7 @@ import type { I18n } from "./i18n";
 
 import heroUrl from "./assets/bg-NQrust.mp4";
 import logoUrl from "./assets/logo.svg";
+import nqrustLogoUrl from "./assets/nqrust.png";
 
 import "./index.css";
 
@@ -116,7 +117,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     <div className={clsx(kcClsx("kcFormCardClass"), "nqr-kc-card")}>
                         <header className={kcClsx("kcFormHeaderClass")}>
                             <div className="nqr-kc-brandRow nqr-kc-brandRow--center">
-                                <img className="nqr-kc-brandLogo" src={logoUrl} alt="Logo" />
+                                <img className="nqr-kc-brandLogo" src={nqrustLogoUrl} alt="Logo" />
                             </div>
 
                             {enabledLanguages.length > 1 && (
