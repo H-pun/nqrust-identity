@@ -195,7 +195,13 @@ a[target="_blank"].pf-v5-svg {
     color: var(--primary);
 }
 .pf-v5-c-menu-toggle.pf-m-primary {
-    --pf-v5-c-menu-toggle--BackgroundColor: transparent;
+    --pf-v5-c-menu-toggle--BackgroundColor: var(--primary-foreground);
+    color: var(--primary);
+}
+.pf-v5-c-button.pf-m-secondary {
+    --pf-v5-c-button--after--BorderColor: var(--primary);
+    color: var(--primary);
+    background-color: var(--primary-foreground);
 }
 
 /* BADGE */
@@ -209,6 +215,10 @@ a[target="_blank"].pf-v5-svg {
 }
 .pf-v5-c-label.pf-m-blue {
     --pf-v5-c-label__content--before--BorderColor: var(--primary-foreground);
+}
+.pf-v5-c-badge.pf-m-unread {
+    --pf-v5-c-badge--Color: var(--primary);
+    --pf-v5-c-badge--BackgroundColor: var(--primary-foreground);
 }
 
 /* TABS */
@@ -228,6 +238,11 @@ a[target="_blank"].pf-v5-svg {
     border-radius: var(--radius) var(--radius) 0 0;
 }
 
+.pf-v5-c-tabs__item.pf-m-current .pf-v5-svg {
+    color: var(--primary-foreground); /* atau white */
+    fill: currentColor;
+}
+
 /* LINKS */
 .pf-v5-c-table__td a {
     color: var(--primary);
@@ -242,4 +257,12 @@ a[target="_blank"].pf-v5-svg {
 }
 .pf-v5-c-switch__input:checked ~ .pf-v5-c-switch__toggle {
     background-color: var(--primary);
+}
+
+/* ALERTS */
+.pf-v5-c-alert.pf-m-info {
+    --pf-v5-c-alert--BorderTopColor: var(--primary);
+    --pf-v5-c-alert__icon--Color: var(--pf-v5-c-alert--m-info__icon--Color);
+    --pf-v5-c-alert__title--Color: var(--primary);
+    --pf-v5-c-alert--m-inline--BackgroundColor: var(--primary-foreground);
 }
