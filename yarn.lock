@@ -1355,6 +1355,11 @@
     url-join "^5.0.0"
     url-template "^3.1.1"
 
+"@keycloakify/email-native@~260007.0.0":
+  version "260007.0.0"
+  resolved "https://registry.yarnpkg.com/@keycloakify/email-native/-/email-native-260007.0.0.tgz#8ee9a889ca022fa13f2d13f166f3c1fa565dc37c"
+  integrity sha512-hFUiOwwpc84eXPAct44G/pTBkYnDQF1jIObME+ZUrb7XidmFJ/TdH9q49LKpd9sIivSyOEJa1qLtrggP+c+BJw==
+
 "@keycloakify/keycloak-account-ui@~260305.0.1":
   version "260305.0.1"
   resolved "https://registry.yarnpkg.com/@keycloakify/keycloak-account-ui/-/keycloak-account-ui-260305.0.1.tgz#16c4fdf7997e627ea818e7b8a51fa83c46b0d244"
