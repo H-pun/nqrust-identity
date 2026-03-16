@@ -5,7 +5,7 @@
  * $ npx keycloakify own --path "admin/index.css" --revert
  */
 
-img.keycloak__pageheader_brand {
+ img.keycloak__pageheader_brand {
     height: 50px;
 }
 
@@ -76,6 +76,13 @@ div.w-tc-editor {
     --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
     --sidebar-border: oklch(0.92 0.004 286.32);
     --sidebar-ring: oklch(0.75 0.183 55.934);
+
+    /* PatternFly Overrides */
+    --pf-v5-global--primary-color--100: var(--primary);
+    --pf-v5-global--primary-color--200: var(--primary);
+    --pf-v5-global--link--Color: var(--primary);
+    --pf-v5-global--link--Color--hover: var(--primary-foreground);
+    --pf-v5-global--active-color--100: var(--primary);
 }
 
 .dark {
@@ -110,6 +117,13 @@ div.w-tc-editor {
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.408 0.123 38.172);
+
+    /* PatternFly Overrides */
+    --pf-v5-global--primary-color--100: var(--primary);
+    --pf-v5-global--primary-color--200: var(--primary);
+    --pf-v5-global--link--Color: var(--primary);
+    --pf-v5-global--link--Color--hover: var(--primary-foreground);
+    --pf-v5-global--active-color--100: var(--primary);
 }
 
 /* NAVBAR */
@@ -232,15 +246,26 @@ a[target="_blank"].pf-v5-svg {
     border-radius: var(--radius) var(--radius) 0 0;
     color: var(--foreground);
 }
+.pf-v5-c-tabs__link:focus {
+    outline-color: var(--primary);
+}
 .pf-v5-c-tabs__item.pf-m-current .pf-v5-c-tabs__link {
     background-color: var(--primary);
     color: var(--primary-foreground);
     border-radius: var(--radius) var(--radius) 0 0;
 }
+.pf-v5-c-tabs__item.pf-m-current .pf-v5-c-tabs__link:focus {
+    outline-color: var(--primary);
+}
 
 .pf-v5-c-tabs__item.pf-m-current .pf-v5-svg {
     color: var(--primary-foreground); /* atau white */
     fill: currentColor;
+}
+
+/* Override blue focus ring globally */
+*:focus-visible {
+    outline-color: var(--primary) !important;
 }
 
 /* LINKS */
@@ -257,6 +282,11 @@ a[target="_blank"].pf-v5-svg {
 }
 .pf-v5-c-switch__input:checked ~ .pf-v5-c-switch__toggle {
     background-color: var(--primary);
+}
+
+/* License modal overlay */
+.pf-v5-c-backdrop {
+    --pf-v5-c-backdrop--BackdropColor: rgba(0, 0, 0, 0.55);
 }
 
 /* ALERTS */
